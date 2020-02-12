@@ -23,7 +23,7 @@ local bgImage -- = resource.load_image("redwedding.jpg")
 local endImage = resource.load_image("endofround.png")
 
 -- Textures/overlays
-local stdTexture = resource.create_colored_texture(0, 0, 0, 0)
+local stdTexture = resource.create_colored_texture(0, 0, 0, 0.2)
 local yTexture = resource.create_colored_texture(1, 1, 0, 1)
 
 -- Load and reload config.json
