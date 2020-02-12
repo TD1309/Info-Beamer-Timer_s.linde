@@ -1,7 +1,7 @@
 {
   "name": "Timer",
   "control_ui": "controls.html",
-  "permissions": "input" {
+  "permissions": {
   "input": "Needs to access to keyboard"
   },
   "options": [
