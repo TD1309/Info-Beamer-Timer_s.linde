@@ -33,7 +33,7 @@
       "valid": ["image"],
       "default": "background.png"
     }
-      "permissions": {
+      "permissions": "input" {
     "input": "Needs to access to keyboard"
     }
   ]
