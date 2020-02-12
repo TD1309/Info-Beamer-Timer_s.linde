@@ -1,6 +1,9 @@
 {
   "name": "Timer",
   "control_ui": "controls.html",
+  "permissions": "input" {
+  "input": "Needs to access to keyboard"
+  },
   "options": [
     {
       "title": "Timer",
@@ -32,9 +35,6 @@
       "type": "resource",
       "valid": ["image"],
       "default": "background.png"
-    }
-      "permissions": "input" {
-    "input": "Needs to access to keyboard"
     }
   ]
 }
