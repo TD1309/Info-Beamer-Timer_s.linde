@@ -1,3 +1,6 @@
+"permissions": {
+    "input": "Needs to access to keyboard"
+}
 {
   "name": "Timer",
   "control_ui": "controls.html",
