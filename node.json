@@ -9,13 +9,13 @@
       "title": "Timer",
       "name": "timer",
       "type": "integer",
-      "default": 50
+      "default": 30
     },
     {
       "title": "Title",
       "name": "title",
       "type": "string",
-      "default": "Timer"
+      "default": "Keep the Time in Mind"
     },
     {
       "title": "Title Size",
