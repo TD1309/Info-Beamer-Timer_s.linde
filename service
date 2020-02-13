@@ -1,3 +1,35 @@
 #!/usr/bin/python2.7
+import sys
+from select import select
+from evdev import ecodes, InputDevice, list_devices
+from hosted import node, config, device as ibdevice
 
+screen_w, screen_h = ibdevice.screen_resolution
 
+config.restart_on_update()
+devices = {}
+
+def update_devices():
+    new = set(list_devices("/dev/input/"))
+    old = set(devices.keys())
+
+    for device_name in new - old:
+        device = InputDevice(device_name)
+        devices[device_name] = device
+        import pprint
+        pprint.pprint(device.capabilities(verbose=True))
+        pprint.pprint(device.capabilities(verbose=False))
+        sys.stdout.flush()
+
+    for device_name in old - new:
+        del devices[device_name]
+
+    if event.type == ecodes.EV_KEY and event.code in ecodes.KEY:
+        node.send('/event/keyboard:%s' % json.dumps(dict(
+            key = ecodes.KEY[event.code].replace("KEY_", "").lower(),
+            action = {
+                KeyEvent.key_up: "up",
+                KeyEvent.key_down: "down",
+                KeyEvent.key_hold: "hold",
+            }[event.value],
+        )))
