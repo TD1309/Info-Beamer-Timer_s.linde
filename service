@@ -28,8 +28,8 @@ def update_devices():
         node.send('/event/keyboard:%s' % json.dumps(dict(
             key = ecodes.KEY[event.code].replace("KEY_", "").lower(),
             action = {
-                KeyEvent.key_up: "up",
-                KeyEvent.key_down: "down",
-                KeyEvent.key_hold: "hold",
+                KeyEvent.key_v: "start",
+                KeyEvent.key_b: "pause",
+                KeyEvent.key_n: "reset",
             }[event.value],
         )))
