@@ -23,7 +23,8 @@ def update_devices():
 
     for device_name in old - new:
         del devices[device_name]
-
+        
+def device_event(device, event):
     if event.type == ecodes.EV_KEY and event.code in ecodes.KEY:
         node.send('/event/keyboard:%s' % json.dumps(dict(
             key = ecodes.KEY[event.code].replace("KEY_", "").lower(),
@@ -33,3 +34,5 @@ def update_devices():
                 KeyEvent.key_n: "reset",
             }[event.value],
         )))
+
+node['/input'](state)
